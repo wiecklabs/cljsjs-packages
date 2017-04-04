@@ -8,7 +8,7 @@
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
-(def +version+ "1.0.0-rc.1")
+(def +version+ "1.0.0-rc.3")
 
 (task-options!
  pom  {:project     'cljsjs/react-select
@@ -26,7 +26,7 @@
 (deftask package []
   (comp
    (download :url (str "https://github.com/JedWatson/react-select/archive/v" +version+ ".zip")
-             :checksum "33C82BFB2F1713B88A6CCB5A5A7CF283"
+             :checksum "651DDCD58B0668313FC59E4C1E4D9E3C"
              :unzip true)
 
    (sift :move {#"^react-select.*[/ \\]dist[/ \\]react-select.js$" "cljsjs/react-select/development/react-select.inc.js"
